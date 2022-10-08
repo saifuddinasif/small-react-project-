@@ -1,7 +1,17 @@
 import React  from 'react';
-import Tshirt from './../Tshirt/Tshirt';
+// import Tshirt from './../Tshirt/Tshirt';
 
 const Cart =  ({cart,handleReMoveItem }) => {
+
+let message;
+
+if(cart.length===0){
+
+    message = <p>please buy one item !!</p>
+}else{
+    message = <p>Thanks for buying </p>
+}
+
     return (
         <div>
          <h1>Order Summary </h1>
@@ -18,7 +28,13 @@ const Cart =  ({cart,handleReMoveItem }) => {
 
             </p>)
          }
+
+             {
+            message
+            }
         </div>
+
+      
     );
 };
 
