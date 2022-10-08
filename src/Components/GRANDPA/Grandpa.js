@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import Aunty from '../Aunty/Aunty';
 import Father from '../Father/Father';
 import Uncle from '../Uncle/Uncle';
@@ -8,9 +8,12 @@ const Grandpa = () => {
 
     const house =7;
     const ring  ="diamond ";
+const RingContext =createContext('MATIR RING ');
 
     return (
-        <div className='grandpa'>
+       <RingContext.Provider value="dadu ring">
+
+<div className='grandpa'>
             <h1>GrandPa </h1>
 
             <section  className='flex'>
@@ -19,6 +22,7 @@ const Grandpa = () => {
                 <Aunty house={house}></Aunty>
             </section>
         </div>
+       </RingContext.Provider>
     );
 };
 
