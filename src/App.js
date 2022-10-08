@@ -2,6 +2,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import About from './Components/About/About';
+import Grandpa from './Components/GRANDPA/Grandpa';
 import Home from './Components/Home/Home';
 import Main from './Components/layouts/Main';
 import Orders from './Components/Orders/Orders';
@@ -33,6 +34,12 @@ const router =createBrowserRouter([
       {
         path: '/about',
         element:<About></About>,
+      },
+
+      
+      {
+        path: '/grandpa',
+        element:<Grandpa></Grandpa>,
       }
 
 
