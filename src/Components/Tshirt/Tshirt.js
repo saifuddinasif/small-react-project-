@@ -10,7 +10,8 @@ const Tshirt = ({tshirt,handleAddToCart}) => {
             <img src={picture} alt="" srcset="" />
             <h2>{name}</h2>
             <h4>PRICE: {price}</h4>
-   <button onClick={  handleAddToCart(tshirt)}> add</button>
+            {/* if u dont add callback function it will get automatically called as soon as the browser runs  */}
+   <button onClick={()  =>  handleAddToCart(tshirt)}> add</button>
         </div>
     );
 };

@@ -17,13 +17,15 @@ const Home = () => {
      const exists =  cart.find(ts => ts._id === tshirt._id);
 
      if(exists){
-        alert( '  t-shirt already exists')
+        alert( 'tshirt already exists')
      }
 
      else{
         const newCart = [...cart, tshirt];
 
         setCart(newCart);
+        alert('successfully  added')
+
      }
 
 
@@ -31,8 +33,15 @@ const Home = () => {
 
    }
      
+   const handleReMoveItem  = tshirt =>  {
 
 
+const remaining =cart.filter(ts => ts._id !== tshirt._id);
+
+     setCart(remaining)
+
+
+   }
 
 
 
@@ -45,7 +54,7 @@ const Home = () => {
 
                         tshirts.map(tshirt => <Tshirt
                         
-                        key={tshirt.id}
+                        key={tshirt._id}
 
                         tshirt={tshirt}
 
@@ -62,7 +71,12 @@ const Home = () => {
 
             <div className="cart-container">
 
-         <Cart  cart={cart}></Cart>
+         <Cart  
+         
+           
+         handleReMoveItem ={handleReMoveItem}
+
+         cart={cart}></Cart>
 
             </div>
         </div>
